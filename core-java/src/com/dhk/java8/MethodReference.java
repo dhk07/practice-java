@@ -2,7 +2,6 @@ package com.dhk.java8;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Stream;
 
 public class MethodReference {
 
@@ -18,9 +17,9 @@ public class MethodReference {
      */
     private static void staticMethodReference(){
         List<User> userList = Arrays.asList(
-                new User(100, "Rahul"),
-                new User(101, "Shyam"),
-                new User(102, "")
+                new User(100, "Rahul", null),
+                new User(101, "Shyam", null),
+                new User(102, "", null)
         );
         //  with lambda expression
         boolean isValud = userList.stream().anyMatch(user -> User.isValidUser(user));
@@ -35,11 +34,11 @@ public class MethodReference {
      */
     private static void methodReferenceToInstance(){
         List<User> userList = Arrays.asList(
-                new User(100, "Rahul"),
-                new User(101, "Shyam"),
-                new User(102, "")
+                new User(100, "Rahul", null),
+                new User(101, "Shyam", null),
+                new User(102, "", null)
         );
-        User user = new User(200,"Ramesh");
+        User user = new User(200,"Ramesh", null);
 
         boolean isLegalName = userList.stream().anyMatch(user::isLegalName);
         System.out.println("isLegalName = " + isLegalName);

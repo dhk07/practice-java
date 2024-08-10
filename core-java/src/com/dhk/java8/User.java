@@ -3,10 +3,20 @@ package com.dhk.java8;
 public class User {
     private int userId;
     private String userName;
+    private Address address;
 
-    public User(int userId, String userName) {
+    public User(int userId, String userName, Address address) {
         this.userId = userId;
         this.userName = userName;
+        this.address = address;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
     public int getUserId() {
